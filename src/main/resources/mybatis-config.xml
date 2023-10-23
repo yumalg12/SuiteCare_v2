@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="com.sc.suitecare" />
+    </typeAliases>
+</configuration>
+
+
+<!-- 
+MyBatis의 핵심 설정 파일이며, 일반적인 MyBatis 설정에 대해 적용됨. typeAliases,
+typeHandlers, plugins, environments, mappers 등 -->
