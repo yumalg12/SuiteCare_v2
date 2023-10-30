@@ -97,3 +97,4 @@ replay_pid*
 main/resources/jdbc.properties
 .classpath
 target/
+*.properties
