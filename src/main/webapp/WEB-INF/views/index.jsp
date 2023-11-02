@@ -7,9 +7,14 @@
 <title>INDEX || SC Suite Care</title>
 </head>
 <body>
-<%
-String context = ((HttpServletRequest)request).getContextPath(); 
-response.sendRedirect("main");
-%>
+<form>
+<div class="form" method="POST" action="signup">
+<label>ID</label><input type="text" placeholder="아이디를 입력하세요" id="id" name="id">
+<label>PW</label><input type="password" placeholder="비밀번호를 입력하세요" id="pw" name="pw">
+</div>
+<button>Submit</button>
+<hr>
+
+</form>
 </body>
 </html>
