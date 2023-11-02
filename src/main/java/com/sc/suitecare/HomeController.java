@@ -36,4 +36,9 @@ public class HomeController {
 		return "calendar";
 	}
 	
+	@RequestMapping(value = "/fullcalendar", method = RequestMethod.GET)
+	public String fullcalendar() {
+		return "fullCalendar";
+	}
+	
 }
