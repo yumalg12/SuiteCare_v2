@@ -56,11 +56,11 @@ class Header extends Component {
             <Fade bottom duration={2000}>
               <ul className="index-btn">
                 <a href={suiteFamily} className="button btn suiteFamily-btn">
-                  <img src={findMate}/>
+                  <img src={findMate} alt="findMate"/>
                   <h2>간병 신청하기</h2>
                 </a>
                 <a href={suiteMate} className="button btn suiteMate-btn">
-                  <img src={findWork}/>
+                  <img src={findWork} alt="findWork"/>
                   <h2>간병 일감 찾기</h2>
                 </a>
               </ul>
