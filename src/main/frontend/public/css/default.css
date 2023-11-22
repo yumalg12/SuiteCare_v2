@@ -29,6 +29,7 @@ e. Others
 @import url("fonts.css");
 @import url("fontello/css/fontello.css");
 @import url("font-awesome/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 
 /* ------------------------------------------------------------------
 /* b. Reset
@@ -136,6 +137,12 @@ table {
    box-sizing: border-box;
 }
 
+:root {
+   --beige-01: #dfd7bf;
+   --brown-01: #a4907c;
+   --deep-brown: #423730;
+ }
+
 html {
    font-size: 62.5%;
    -webkit-font-smoothing: antialiased;
@@ -143,8 +150,8 @@ html {
 
 body {
    background: #fff;
-   font-family: 'opensans-regular', sans-serif;
-   font-weight: normal;
+   font-family: 'Noto Sans KR', sans-serif;
+   font-weight: 300;
    font-size: 15px;
    line-height: 30px;
 	color: #838C95;
@@ -159,8 +166,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
    color: #313131;
-	font-family: 'opensans-bold', sans-serif;
-   font-weight: normal;
+	font-family: 'Noto Sans KR', sans-serif;
+   font-weight: 600;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 h1 { font-size: 38px; line-height: 42px; margin-bottom: 12px; letter-spacing: -1px; }
@@ -169,116 +176,20 @@ h3 { font-size: 22px; line-height: 30px; margin-bottom: 12px; }
 h4 { font-size: 20px; line-height: 30px; margin-bottom: 6px; }
 h5 { font-size: 18px; line-height: 30px; }
 h6 { font-size: 14px; line-height: 30px; }
-.subheader { }
 
 p { margin: 0 0 30px 0; }
 p img { margin: 0; }
 p.lead {
-   font: 19px/36px 'opensans-light', sans-serif;
+   font: 19px/36px 'Noto Sans KR', sans-serif;
+   font-weight: 100;
    margin-bottom: 18px;
 }
 
 /* for 'em' and 'strong' tags, font-size and line-height should be same with
 the body tag due to rendering problems in some browsers */
-em { font: 15px/30px 'opensans-italic', sans-serif; }
-strong, b { font: 15px/30px 'opensans-bold', sans-serif; }
+em { font: 15px/30px 'Noto Sans KR', sans-serif; }
+strong, b { font: 15px/30px 'Noto Sans KR', sans-serif; font-weight: 600; }
 small { font-size: 11px; line-height: inherit; }
-
-/*	Blockquotes */
-blockquote {
-   margin: 30px 0px;
-   padding-left: 40px;
-   position: relative;
-}
-blockquote:before {
-   content: "\201C";
-   opacity: 0.45;
-   font-size: 80px;
-   line-height: 0px;
-   margin: 0;
-   font-family: arial, sans-serif;
-
-   position: absolute;
-   top:  30px;
-	left: 0;
-}
-blockquote p {
-   font-family: 'librebaskerville-italic', serif;
-   padding: 0;
-   font-size: 18px;
-   line-height: 36px;
-}
-blockquote cite {
-   display: block;
-   font-size: 12px;
-   font-style: normal;
-   line-height: 18px;
-}
-blockquote cite:before { content: "\2014 \0020"; }
-blockquote cite a,
-blockquote cite a:visited { color: #8B9798; border: none }
-
-/* ---------------------------------------------------------------------
-/*  Pull Quotes Markup
-/*
-    <aside class="pull-quote">
-		<blockquote>
-			<p></p>
-		</blockquote>
-	 </aside>
-/*
-/* --------------------------------------------------------------------- */
-.pull-quote {
-   position: relative;
-	padding: 18px 30px 18px 0px;
-}
-.pull-quote:before,
-.pull-quote:after {
-	height: 1em;
-	opacity: 0.45;
-	position: absolute;
-	font-size: 80px;
-   font-family: Arial, Sans-Serif;
-}
-.pull-quote:before {
-	content: "\201C";
-	top:  33px;
-	left: 0;
-}
-.pull-quote:after {
-	content: '\201D';
-	bottom: -33px;
-	right: 0;
-}
-.pull-quote blockquote {
-   margin: 0;
-}
-.pull-quote blockquote:before {
-   content: none;
-}
-
-/* Abbreviations */
-abbr {
-   font-family: 'opensans-bold', sans-serif;
-	font-variant: small-caps;
-	text-transform: lowercase;
-   letter-spacing: .5px;
-	color: gray;
-}
-abbr:hover { cursor: help; }
-
-/* drop cap */
-.drop-cap:first-letter {
-	float: left;
-	margin: 0;
-	padding: 14px 6px 0 0;
-	font-size: 84px;
-	font-family: /* Copperplate */ 'opensans-bold', sans-serif;
-   line-height: 60px;
-	text-indent: 0;
-	background: transparent;
-	color: inherit;
-}
 
 hr { border: solid #E3E3E3; border-width: 1px 0 0; clear: both; margin: 11px 0 30px; height: 0; }
 
@@ -288,7 +199,7 @@ hr { border: solid #E3E3E3; border-width: 1px 0 0; clear: both; margin: 11px 0 3
 a, a:visited {
    text-decoration: none;
    outline: 0;
-   color: #11ABB0;
+   color: var(--beige-01);
 
    -webkit-transition: color .3s ease-in-out;
    -moz-transition: color .3s ease-in-out;
@@ -313,92 +224,7 @@ ol ol, ol ul { margin: 6px 0 6px 30px; }
 ul ul li, ul ol li,
 ol ol li, ol ul li { margin-bottom: 6px; }
 li { line-height: 18px; margin-bottom: 12px; }
-ul.large li { }
-li p { }
 
-/* ---------------------------------------------------------------------
-/*  Stats Tab Markup
-
-    <ul class="stats-tabs">
-		<li><a href="#">[value]<b>[name]</b></a></li>
-	 </ul>
-
-    Extend this object into your markup.
-/*
-/* --------------------------------------------------------------------- */
-.stats-tabs {
-   padding: 0;
-   margin: 24px 0;
-}
-.stats-tabs li {
-	display: inline-block;
-	margin: 0 10px 18px 0;
-	padding: 0 10px 0 0;
-	border-right: 1px solid #ccc;
-}
-.stats-tabs li:last-child {
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-.stats-tabs li a {
-	display: inline-block;
-	font-size: 22px;
-	font-family: 'opensans-bold', sans-serif;
-   border: none;
-   color: #313131;
-}
-.stats-tabs li a:hover {
-   color:#11ABB0;
-}
-.stats-tabs li a b {
-	display: block;
-	margin: 6px 0 0 0;
-	font-size: 13px;
-	font-family: 'opensans-regular', sans-serif;
-   color: #8B9798;
-}
-
-/* definition list */
-dl { margin: 12px 0; }
-dt { margin: 0; color:#11ABB0; }
-dd { margin: 0 0 0 20px; }
-
-/* Lining Definition Style Markup */
-.lining dt,
-.lining dd {
-	display: inline;
-	margin: 0;
-}
-.lining dt + dt:before,
-.lining dd + dt:before {
-	content: "\A";
-	white-space: pre;
-}
-.lining dd + dd:before {
-	content: ", ";
-}
-.lining dd:before {
-	content: ": ";
-	margin-left: -0.2em;
-}
-
-/* Dictionary Definition Style Markup */
-.dictionary-style dt {
-	display: inline;
-	counter-reset: definitions;
-}
-.dictionary-style dt + dt:before {
-	content: ", ";
-	margin-left: -0.2em;
-}
-.dictionary-style dd {
-	display: block;
-	counter-increment: definitions;
-}
-.dictionary-style dd:before {
-	content: counter(definitions, decimal) ". ";
-}
 
 /* Pagination */
 .pagination {
@@ -411,7 +237,8 @@ dd { margin: 0 0 0 20px; }
    padding: 0;
 }
 .pagination .page-numbers {
-   font: 15px/18px 'opensans-bold', sans-serif;
+   font: 15px/18px 'Noto Sans KR', sans-serif;
+   font-weight: 600;
    display: inline-block;
    padding: 6px 10px;
    margin-right: 3px;
@@ -436,7 +263,7 @@ dd { margin: 0 0 0 20px; }
 }
 .pagination .current,
 .pagination .current:hover {
-   background-color: #11ABB0;
+   background-color: var(--beige-01);
    color: #fff;
 }
 .pagination .inactive,
@@ -463,8 +290,9 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-   font: 16px/30px 'opensans-bold', sans-serif;
-   background: #11ABB0;
+   font: 16px/30px 'Noto Sans KR', sans-serif;
+   font-weight: 600;
+   background: var(--brown-01);
    display: inline-block;
 	text-decoration: none;
    letter-spacing: 0;
@@ -565,7 +393,8 @@ textarea { min-height: 220px; }
 
 label,
 legend {
-   font: 16px/24px 'opensans-bold', sans-serif;
+   font: 16px/24px 'Noto Sans KR', sans-serif;
+   font-weight: 600;
 	margin: 12px 0;
    color: #3d4145;
    display: block;
@@ -573,7 +402,8 @@ legend {
 label span,
 legend span {
 	color: #8B9798;
-   font: 14px/24px 'opensans-regular', sans-serif;
+   font: 14px/24px 'Noto Sans KR', sans-serif;
+   font-weight: 300;
 }
 
 input[type="checkbox"],
