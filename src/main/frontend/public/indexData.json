@@ -3,8 +3,6 @@
     "title":"Suite Care",
     "description":"당신 곁의 스윗한 동반자, 스위트케어",
     "contactmessage":"문의 사항이 있으시다면 메일을 보내 주세요.",
-    "suiteFamily":"/suitefamily/login",
-    "suiteMate":"/suitemate/login",
     "email": "youremailhere@gmail.com",
     "social":[
       {
