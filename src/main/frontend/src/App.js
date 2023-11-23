@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import FamilyLogin from './pages/Family/Login';
 import MateLogin from './pages/Mate/Login';
 
-function App() {
+const App = () => {
   console.log(<Home/>);
   return (
       <div className='App'>
