@@ -1,58 +1,54 @@
-import React, { Component } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect, createContext } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ReactGA from "react-ga";
-import $ from "jquery";
 import Header from "../component/Index/Header";
 import Footer from "../component/Index/Footer";
 import About from "../component/Index/About";
 import Contact from "../component/Index/Contact";
+import FamilyLogin from "../pages/Family/Login";
+import MateLogin from "../pages/Mate/Login";
 
-class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foo: "bar",
-      indexData: {}
-    };
-
+const Index = () => {
+  const [indexData, setIndexData] = useState({});
+  
+  useEffect(() => {
     ReactGA.initialize("UA-110570651-1");
     ReactGA.pageview(window.location.pathname);
-  }
+    getIndexData();
+  }, []);
 
-  getIndexData() {
-    $.ajax({
-      url: "./indexData.json",
-      dataType: "json",
-      cache: false,
-      success: function(data) {
-        this.setState({ indexData: data });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.log(err);
-        alert(err);
+  const getIndexData = async () => {
+    try {
+      const response = await fetch("./indexData.json");
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    });
-  }
+      const data = await response.json();
+      setIndexData(data);
+    } catch (error) {
+      console.error(error);
+      alert(error.message);
+    }
+  };
 
-  componentDidMount() {
-    this.getIndexData();
-  }
+  return (
+    <div className="Index">
+      <StateContext.Provider value={indexData}>
+        <Header data={indexData.main} />
+        <About data={indexData.about} />
+        <Contact data={indexData.main} />
+        <Footer data={indexData.main} />
+      </StateContext.Provider>
 
-  render() {
-    return (
-      <div className="Index">
-        <Header data={this.state.indexData.main} />
-        <About data={this.state.indexData.about} />
-        <Contact data={this.state.indexData.main} />
-        <Footer data={this.state.indexData.main} />
-        
+      <Router>
         <Routes>
-            <Route path="/suitefamily/login" element={<FamilyLogin/>} />
-            <Route path="/suitemate/login" element={<MateLogin/>} />
+          <Route path="/suitefamily/login" element={<FamilyLogin />} />
+          <Route path="/suitemate/login" element={<MateLogin />} />
         </Routes>
-      </div>
-    );
-  }
-}
+      </Router>
+    </div>
+  );
+};
 
+export const StateContext = createContext();
 export default Index;
