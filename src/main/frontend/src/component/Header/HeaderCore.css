@@ -1,0 +1,55 @@
+header#core {
+  background-color: var(--brown-01);
+  display: grid;
+  height: 250px;
+  padding: 3rem 3rem 1rem 3rem;
+  box-shadow: 0px 0px 20px #aaaa;
+}
+
+header#core :first-child {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+header#core ul {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  font-size: 3rem;
+}
+
+header#core li {
+  cursor: pointer;
+}
+
+header#core ul.big_menu {
+  color: var(--beige-01);
+  font-weight: 500;
+}
+
+header#core ul.big_menu li.active {
+  color: white;
+  text-decoration: underline;
+}
+
+header#core ul.big_menu li:hover {
+  color: var(--deep-brown);
+  text-decoration: underline;
+}
+
+header#core ul.small_menu li a {
+  font-size: 2rem;
+  color: white;
+}
+
+header#core ul.small_menu li a:hover {
+  color: var(--deep-brown);
+}
+
+header#core a#logo img {
+  width: 120px;
+}
+
+header#core a#logo {
+  width: fit-content;
+}
