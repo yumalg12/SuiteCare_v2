@@ -56,6 +56,7 @@ time, mark, audio, video {
    font-size: 100%;
    vertical-align: baseline;
    background: transparent;
+   word-break: keep-all;
 }
 
 article,aside,details,figcaption,figure,
@@ -153,7 +154,7 @@ body {
    font-weight: 300;
    font-size: 15px;
    line-height: 30px;
-	color: #838C95;
+	color: #333;
 
    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;
@@ -164,7 +165,6 @@ body {
 --------------------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-   color: #313131;
 	font-family: 'Noto Sans KR', sans-serif;
    font-weight: 600;
 }
@@ -205,7 +205,7 @@ a, a:visited {
    -o-transition: color .3s ease-in-out;
    transition: color .3s ease-in-out;
 }
-a:hover, a:focus { color: #313131; }
+a:hover, a:focus { color: var(--deep-brown); }
 p a, p a:visited { line-height: inherit; }
 
 
@@ -242,8 +242,8 @@ li { line-height: 18px; margin-bottom: 12px; }
    padding: 6px 10px;
    margin-right: 3px;
    margin-bottom: 6px;
-	color: #6E757C;
-	background-color: #E6E8EB;
+	color: var(--brown-01);
+	background-color: var(--beige-01);
 
 	-webkit-transition: all 200ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out;
@@ -257,7 +257,7 @@ li { line-height: 18px; margin-bottom: 12px; }
 	border-radius: 0px;
 }
 .pagination .page-numbers:hover {
-   background: #838A91;
+   background: var(--deep-brown);
    color: #fff;
 }
 .pagination .current,
@@ -319,7 +319,7 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-   background: #3d4145;
+   background: var(--deep-brown);
    color: #fff;
 }
 
@@ -328,7 +328,7 @@ button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
-   background: #3d4145;
+   background: var(--deep-brown);
    color: #fff;
 }
 
