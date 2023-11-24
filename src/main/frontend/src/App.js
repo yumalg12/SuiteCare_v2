@@ -3,6 +3,7 @@ import React from 'react';
 import Home from './pages/Home';
 import FamilyLogin from './pages/Family/Login';
 import MateLogin from './pages/Mate/Login';
+import Test from './pages/Test';
 
 const App = () => {
   console.log(<Home/>);
@@ -13,6 +14,7 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/family/login' element={<FamilyLogin />} />
             <Route path='/mate/login' element={<MateLogin />} />
+            <Route path='/test' element={<Test/>}/>
           </Routes>
         </Router>
       </div>
