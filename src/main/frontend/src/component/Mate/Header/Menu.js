@@ -4,7 +4,7 @@ import MenuList from "./MenuList";
 const Menu = () => {
 
   const menuItems = MenuList.map(e => (
-    <li key={e.url} className="small_menu_item"><a href={'/family/'+e.url}>{e.title}</a></li>
+    <li key={e.url} className="small_menu_item"><a href={'/mate/'+e.url}>{e.title}</a></li>
   ));
 
   return (

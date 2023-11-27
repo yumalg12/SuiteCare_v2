@@ -18,7 +18,7 @@ const Home = () => {
     try {
       const response = await fetch("./indexData.json");
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('indexData.json 파일의 경로를 확인하십시오.\n(이 메시지는 추후 변경이 필요함)');
       }
       const data = await response.json();
       setIndexData(data);
