@@ -4,9 +4,7 @@ import com.suitecare.suitecare.api.service.LoginService;
 import com.suitecare.suitecare.domain.FamilyDTO;
 import com.suitecare.suitecare.domain.LoginDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/api/v1")
