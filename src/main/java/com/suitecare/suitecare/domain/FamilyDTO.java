@@ -1,11 +1,13 @@
 package com.suitecare.suitecare.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import lombok.NonNull;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 
+@Data
 public class FamilyDTO {
     @NonNull
     private String suite_family_id;
