@@ -1,14 +1,10 @@
 import { Fade } from "react-reveal";
+import MenuList from "./MenuList";
 
 const Menu = () => {
-  const urlObj = {
-    "일감 검색하기": "/search",
-    "내 활동 관리": "/manage",
-    "마이페이지": "/mypage",
-  };
 
-  const menuItems = Object.entries(urlObj).map(([label, url]) => (
-    <li key={url} className="small_menu_item"><a href={'/mate'+url}>{label}</a></li>
+  const menuItems = MenuList.map(e => (
+    <li key={e.url} className="small_menu_item"><a href={'/mate/'+e.url}>{e.title}</a></li>
   ));
 
   return (
