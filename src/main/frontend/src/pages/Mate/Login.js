@@ -1,5 +1,14 @@
+import Form from '../../component/Login/Form'
+import Header from '../../component/Mate/Header/Header'
+
 function Login() {
-  return (<div className="Login">메이트 로그인 페이지를 띄워요</div>)
+  return (<div className="Login">
+  <Header/>
+  <Form/>
+
+  </div>)
 }
+
+
 
 export default Login;
