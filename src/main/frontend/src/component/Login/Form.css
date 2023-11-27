@@ -1,0 +1,76 @@
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background:#ffffff;
+}
+
+.login-box {
+  position: relative;
+  width: 400px;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: var(--deep-brown-01));
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 7px 0;
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 30px;
+  border: none;
+  outline: 1px solid #bfbfbf;
+  background: transparent;
+}
+
+.login-box .button_1{
+    background: #4f4242;
+  	padding: 7px 20px;
+
+  }
+
+.login-box .button_2{
+     background: #a4907c;
+     padding: 7px 20px;
+   }
+
+
+.login-box .button_1:hover,
+button:hover,
+input[type="button"]:hover {
+   background: var(--deep-brown);
+}
+
+.login-box .button_1:active,
+button:active,
+input[type="button"]:active {
+   background: var(--deep-brown);
+}
+
+.login-box .button_2:hover,
+button:hover,
+input[type="button"]:hover {
+   background: var(--deep-brown);
+}
+
+.login-box .button_2:active,
+button:active,
+input[type="button"]:active {
+   background: var(--deep-brown);
+}
+
