@@ -1,27 +1,27 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import './Form.css';
 
 const Form = ({ type }) => {
-  
-  //type에 따라 변경될 값을 모아 둔 함수
-  const valueSet = ($type) => {
+    //type에 따라 변경될 값을 모아 둔 함수
+    const valueSet = ($type) => {
         if ($type === 'family') {
             return {
-              url: '/family/signup',
+                url: '/family/signup',
                 buttonText: '패밀리 회원가입',
                 radioRedirect: '/mate/signup',
                 otherType: '메이트 (간병인)',
             };
-          } else if ($type === 'mate') {
+        } else if ($type === 'mate') {
             return {
-              url: '/mate/signup',
+                url: '/mate/signup',
                 buttonText: '메이트 회원가입',
                 radioRedirect: '/family/signup',
                 otherType: '패밀리 (간병 서비스 이용자)',
             };
-          }
-        };
-        
+        }
+    };
+
     //회원가입 버튼 클릭 시 이동시키는 함수
     const navigate = useNavigate();
     const handleSignUpClick = () => {
@@ -38,7 +38,19 @@ const Form = ({ type }) => {
         }
     };
 
-    //핸드폰 번호를 작성하고 hidden input에 모으는 파트
+    //아이디를 state에 저장
+    const [idState, setIdState] = useState('');
+    const onIdChange = ($event) => {
+        const id = $event.target.value;
+        setIdState(id);
+    };
+
+    //아이디 중복확인
+    const checkDuplicateID = () => {
+        alert(idState);
+    };
+
+    //휴대폰 번호를 작성하고 hidden input에 모으는 파트
     const [phoneParts, setPhoneParts] = useState({
         phone_1: '',
         phone_2: '',
@@ -62,6 +74,11 @@ const Form = ({ type }) => {
 
     const { phone_1, phone_2, phone_3 } = phoneParts;
     const phoneNumber = `${phone_1}-${phone_2}-${phone_3}`;
+
+    //휴대폰 번호 인증
+    const authenticatePhone = () => {
+        alert(`인증 api 연동 필요\n${Array.from(phoneParts).join('')}`);
+    };
 
     //form에 포함될 input을 편하게 작성하기 위한 정보 모음
     const formInputInfos = {
@@ -94,11 +111,18 @@ const Form = ({ type }) => {
             maxLength: 15,
         },
         phone_authentication: {
-            label: '인증번호',
-            type: 'text',
+            label: null,
+            type: 'hidden',
             name: null,
             id: 'phone_authentication',
             maxLength: 5,
+        },
+        birth: {
+            label: null,
+            type: 'hidden',
+            name: null,
+            id: 'birth',
+            maxLength: null,
         },
     };
 
@@ -120,7 +144,7 @@ const Form = ({ type }) => {
     //렌더링 부분
     return (
         <div className="Form">
-          <h1>{valueSet(type).buttonText}</h1>
+            <h1>{valueSet(type).buttonText}</h1>
             <div className="input_wrapper">
                 <label>회원 구분</label>
                 <div className="input_radio">
@@ -137,26 +161,37 @@ const Form = ({ type }) => {
 
             <hr />
 
-          <form name='signup'>
-            {formInputs('id')}
-            {formInputs('pw')}
-            {formInputs('pw_check')}
-            {formInputs('user_name')}
-
-            <div className="input_wrapper">
-                <label>휴대전화</label>
-                <div className="input_phone">
-                    <input type="text" placeholder="010" id="phone_1" value={phone_1} maxLength={3} onChange={handlePhoneChange} />-
-                    <input type="text" placeholder="0000" id="phone_2" value={phone_2} maxLength={4} onChange={handlePhoneChange} />-
-                    <input type="text" placeholder="0000" id="phone_3" value={phone_3} maxLength={4} onChange={handlePhoneChange} />
-                    <input type="hidden" name="phone" value={phoneNumber} />
+            <form name="signup">
+                <div className="input_wrapper">
+                    <label>아이디</label>
+                    <div className="input_with_button">
+                        <input type="text" placeholder="아이디" name="id" id="id" maxLength="20" onChange={onIdChange} />
+                        <button onClick={checkDuplicateID}>중복확인</button>
+                    </div>
                 </div>
-            </div>
 
-            {formInputs('phone_authentication')}
+                {formInputs('pw')}
+                {formInputs('pw_check')}
+                {formInputs('user_name')}
 
-            <hr />
-            <button onClick={handleSignUpClick}>{valueSet(type).buttonText}</button>
+                <div className="input_wrapper">
+                    <label>휴대전화</label>
+                    <div className="input_with_button">
+                        <div className="input_phone">
+                            <input type="text" placeholder="010" id="phone_1" value={phone_1} maxLength={3} onChange={handlePhoneChange} />-
+                            <input type="text" placeholder="0000" id="phone_2" value={phone_2} maxLength={4} onChange={handlePhoneChange} />-
+                            <input type="text" placeholder="0000" id="phone_3" value={phone_3} maxLength={4} onChange={handlePhoneChange} />
+                            <input type="hidden" name="phone" value={phoneNumber} />
+                        </div>
+                        <button onClick={authenticatePhone}>본인인증</button>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div className="button_wrapper">
+                    <button onClick={handleSignUpClick}>{valueSet(type).buttonText}</button>
+                </div>
             </form>
         </div>
     );
