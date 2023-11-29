@@ -22,6 +22,18 @@ header#core li {
   cursor: pointer;
 }
 
+header#core button{
+    width: inherit;
+    background: transparent;
+  	padding: 7px 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+header#core button :hover {
+    display:block;
+}
+
 header#core ul.big_menu {
   color: var(--beige-01);
   font-weight: 500;
@@ -29,21 +41,20 @@ header#core ul.big_menu {
 
 header#core ul.big_menu li.active {
   color: white;
-  text-decoration: underline;
 }
 
 header#core ul.big_menu li:hover {
   color: var(--deep-brown);
-  text-decoration: underline;
 }
 
 header#core ul.small_menu li a {
-  font-size: 2rem;
-  color: white;
+  font-size: 1.5rem;
+  display: inline-block;
+  color: var(--beige-01);
 }
 
 header#core ul.small_menu li a:hover {
-  color: var(--deep-brown);
+  color: var(--brown-01);
 }
 
 header#core a#logo img {
@@ -53,3 +64,4 @@ header#core a#logo img {
 header#core a#logo {
   width: fit-content;
 }
+
