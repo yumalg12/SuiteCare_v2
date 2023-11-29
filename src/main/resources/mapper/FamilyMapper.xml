@@ -7,8 +7,6 @@
     <!-- 회원가입 -->
     <insert id="createFamily" parameterType="CreateFamilyDTO">
         insert into suitefamily
-        <!--values (#{id}, #{password}, #{name}, null, null, null, #{tel},
-                null, null, null, null, #{signup_date}, null)-->
         values (#{id}, #{password}, #{name}, null, null, null, #{tel},
         null, null, null, null, sysdate(), null)
     </insert>
