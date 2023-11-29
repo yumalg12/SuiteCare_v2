@@ -4,6 +4,7 @@ header#core {
   height: 250px;
   padding: 3rem 3rem 1rem 3rem;
   box-shadow: 0px 0px 20px #aaaa;
+  margin-bottom: 8rem;
 }
 
 header#core :first-child {
