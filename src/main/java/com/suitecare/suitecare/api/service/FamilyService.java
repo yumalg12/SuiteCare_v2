@@ -1,16 +1,19 @@
 package com.suitecare.suitecare.api.service;
 
 import com.suitecare.suitecare.api.repository.FamilyMapper;
+import com.suitecare.suitecare.domain.CreateFamilyDTO;
 import com.suitecare.suitecare.domain.FamilyDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class FamilyService {
     @Autowired
     FamilyMapper familyMapper;
 
-    public FamilyDTO createFamily(FamilyDTO familyDTO){
-        return familyMapper.createFamily(familyDTO);
+    @Transactional
+    public int createFamily(CreateFamilyDTO createFamilyDTO){
+        return familyMapper.createFamily(createFamilyDTO);
     }
 }
