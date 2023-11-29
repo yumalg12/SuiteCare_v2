@@ -5,10 +5,12 @@
 <mapper namespace="com.suitecare.suitecare.api.repository.FamilyMapper">
 
     <!-- 회원가입 -->
-    <insert id="createFamily" parameterType="FamilyDTO">
+    <insert id="createFamily" parameterType="CreateFamilyDTO">
         insert into suitefamily
-        values (#{suite_family_id}, #{password}, #{family_name}, #{family_gender}, #{family_birthday}, #{email}, #{tel},
-                #{address}, #{address_detail}, #{sms_opt_in}, #{email_opt_in}, #{signup_date}, #{role})
+        <!--values (#{id}, #{password}, #{name}, null, null, null, #{tel},
+                null, null, null, null, #{signup_date}, null)-->
+        values (#{id}, #{password}, #{name}, null, null, null, #{tel},
+        null, null, null, null, sysdate(), null)
     </insert>
 
     <!-- 로그인 -->
