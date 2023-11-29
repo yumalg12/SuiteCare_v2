@@ -169,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
    font-weight: 600;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
-h1 { font-size: 38px; line-height: 42px; margin-bottom: 12px; letter-spacing: -1px; }
+h1 { font-size: 38px; line-height: 42px; margin-bottom: 4rem; letter-spacing: -1px; }
 h2 { font-size: 28px; line-height: 36px; margin-bottom: 6px; }
 h3 { font-size: 22px; line-height: 30px; margin-bottom: 12px; }
 h4 { font-size: 20px; line-height: 30px; margin-bottom: 6px; }
@@ -296,8 +296,8 @@ input[type="button"] {
 	text-decoration: none;
    letter-spacing: 0;
    color: #fff;
-	padding: 12px 20px;
-	margin-bottom: 18px;
+   padding: 1rem 2rem;
+   margin-bottom: 2rem;
    border: none;
    cursor: pointer;
    height: auto;
@@ -361,19 +361,15 @@ input[type="password"],
 input[type="email"],
 textarea,
 select {
-   display: block;
-   padding: 18px 15px;
-   margin: 0 0 24px 0;
+   padding: 1rem 2rem;
+   margin-bottom: 2rem;
    border: 0;
    outline: none;
-   vertical-align: middle;
-   min-width: 225px;
-	max-width: 100%;
    font-size: 15px;
-   line-height: 24px;
-	color: #647373;
-	background: #D3D9D9;
-
+	color: #333;
+   background: transparent;
+   border-bottom: 1px solid var(--deep-brown);
+   min-height: 50px;
 }
 
 /* select { padding: 0;
@@ -384,8 +380,8 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-   color: #B3B7BC;
-	background-color: #3d4145;
+   outline: 3px solid var(--beige-01);
+	background-color: white;
 }
 
 textarea { min-height: 220px; }
