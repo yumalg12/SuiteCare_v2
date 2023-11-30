@@ -7,6 +7,7 @@ import FamilySignUp from './pages/Family/SignUp';
 import MateSignUp from './pages/Mate/SignUp';
 import FamilyMain from './pages/Family/Main';
 import MateMain from './pages/Mate/Main';
+import AddPatient from './pages/Family/AddPatient';
 import Test from './pages/Test';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
             <Route path='/mate/signup' element={<MateSignUp />} />
             <Route path='/family/main' element={<FamilyMain />} />
             <Route path='/mate/main' element={<MateMain />} />
+            <Route path='/family/add_patient' element={<AddPatient />} />
             <Route path='/test' element={<Test/>}/>
           </Routes>
         </Router>
