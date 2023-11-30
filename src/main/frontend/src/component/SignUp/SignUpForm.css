@@ -1,33 +1,33 @@
-.Form {
+.SignUpForm {
   width: 60%;
   margin: 0 auto;
   max-width: 600px;
 }
 
-.Form h1 {
+.SignUpForm h1 {
   text-align: center;
 }
 
-.Form .input_wrapper {
+.SignUpForm .input_wrapper {
   display: grid;
   grid-template-columns: 200px 1fr;
 }
 
-.Form .input_wrapper .input_with_button{
+.SignUpForm .input_wrapper .input_with_button{
   display: grid;
   grid-template-columns: 1fr 12rem;
   gap: 1rem
 }
 
-.Form .input_wrapper .input_phone {
+.SignUpForm .input_wrapper .input_phone {
   display: flex;
   align-items: baseline;
 }
 
-.Form .input_wrapper .input_phone input {
+.SignUpForm .input_wrapper .input_phone input {
   width: 30%;
 }
 
-.Form form .button_wrapper {
+.SignUpForm form .button_wrapper {
   text-align: center;
 }

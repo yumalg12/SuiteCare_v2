@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Form.css';
+import './LoginForm.css';
 import { useNavigate } from 'react-router-dom';
 
-const Form = ({ type }) => {
+const LoginForm = ({ type }) => {
     // react hook에서 state 사용
     const [ID, setID] = useState('');
     const [Password, setPassword] = useState('');
@@ -36,7 +36,7 @@ const Form = ({ type }) => {
     };
 
     return (
-        <div className="Form">
+        <div className="LoginForm">
             <div class="login-box">
                 <h1> 로그인 </h1>
                 <br />
@@ -60,4 +60,4 @@ const Form = ({ type }) => {
     );
 };
 
-export default Form;
+export default LoginForm;

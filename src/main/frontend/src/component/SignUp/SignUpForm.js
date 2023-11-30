@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import './Form.css';
+import './SignUpForm.css';
 
-const Form = ({ type }) => {
+const SignUpForm = ({ type }) => {
     //type에 따라 변경될 값을 모아 둔 함수
     const valueSet = ($type) => {
         if ($type === 'family') {
@@ -143,7 +143,7 @@ const Form = ({ type }) => {
 
     //렌더링 부분
     return (
-        <div className="Form">
+        <div className="SignUpForm">
             <h1>{valueSet(type).buttonText}</h1>
             <div className="input_wrapper">
                 <label>회원 구분</label>
@@ -197,4 +197,4 @@ const Form = ({ type }) => {
     );
 };
 
-export default Form;
+export default SignUpForm;

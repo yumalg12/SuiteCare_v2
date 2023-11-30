@@ -1,11 +1,11 @@
 import Header from '../../component/Mate/Header/Header';
-import Form from '../../component/SignUp/Form';
+import SignUpForm from '../../component/SignUp/SignUpForm';
 
 const SignUp = () => {
     return (
         <div className="SignUp">
             <Header />
-            <Form type="mate" />
+            <SignUpForm type="mate" />
         </div>
     );
 };

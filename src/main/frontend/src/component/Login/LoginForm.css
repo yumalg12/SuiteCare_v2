@@ -2,7 +2,7 @@ body {
   background:#ffffff;
 }
 
-.Form {
+.LoginForm {
     display: flex;
     justify-content: center;
     align-items: center;
