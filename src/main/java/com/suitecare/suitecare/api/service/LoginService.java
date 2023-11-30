@@ -12,7 +12,8 @@ public class LoginService {
     @Autowired
     FamilyMapper familyMapper;
 
-    public FamilyDTO createFamily(LoginDTO login){
+    public FamilyDTO loginFamily(LoginDTO login){
+        System.out.println("in login Service : " + login);
         return familyMapper.login(login);
     }
 }
