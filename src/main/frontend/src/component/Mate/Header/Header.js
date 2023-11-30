@@ -1,4 +1,4 @@
-import HeaderCore from "../../Header/HeaderCoreTest";
+import HeaderCore from "../../Header/HeaderCore";
 
 const Header = () => {
   return (<div className="Header">

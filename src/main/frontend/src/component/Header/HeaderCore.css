@@ -1,60 +1,37 @@
 header#core {
   background-color: var(--deep-brown);
   display: grid;
-  height: 250px;
+  height: 160px;
   padding: 3rem 3rem 1rem 3rem;
   box-shadow: 0px 0px 20px #aaaa;
+  grid-template-rows: 1fr 6.6rem;
+  margin-bottom: 8rem;
 }
 
-header#core :first-child {
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
-header#core ul {
+header#core ul.menu_wrapper {
   display: flex;
   justify-content: center;
   gap: 5rem;
   font-size: 3rem;
 }
 
-header#core li {
+header#core .menu_wrapper li {
   cursor: pointer;
+  position: relative;
 }
 
 header#core button{
     width: inherit;
     background: transparent;
   	padding: 7px 20px;
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
+    color: var(--beige-01);
+    font-weight: 500;
   }
 
-header#core button :hover {
-    display:block;
-}
-
-header#core ul.big_menu {
-  color: var(--beige-01);
-  font-weight: 500;
-}
-
-header#core ul.big_menu li.active {
+header#core button.active{
   color: white;
-}
-
-header#core ul.big_menu li:hover {
-  color: var(--deep-brown);
-}
-
-header#core ul.small_menu li a {
-  font-size: 1.5rem;
-  display: inline-block;
-  color: var(--beige-01);
-}
-
-header#core ul.small_menu li a:hover {
-  color: var(--brown-01);
 }
 
 header#core a#logo img {
