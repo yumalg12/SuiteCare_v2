@@ -36,18 +36,18 @@ const LoginForm = ({ type }) => {
     };
 
     return (
-        <div className="LoginForm">
+        <div className="LoginForm Form">
             <div class="login-box">
                 <h1> 로그인 </h1>
                 <br />
-                <br />
-                <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={onSubmitHandler}>
+                <form onSubmit={onSubmitHandler}>
                     <div class="user-box">
                         <input type="text" placeholder=" 아이디" value={ID} onChange={onIDHandler} />
                     </div>
                     <div class="user-box">
                         <input type="password" placeholder=" 비밀번호" value={Password} onChange={onPasswordHandler} />
                     </div>
+                <br />
                     <button className="button button_1" type="submit">
                         로그인
                     </button>

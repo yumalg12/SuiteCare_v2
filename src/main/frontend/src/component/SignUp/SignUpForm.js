@@ -143,7 +143,7 @@ const SignUpForm = ({ type }) => {
 
     //렌더링 부분
     return (
-        <div className="SignUpForm">
+        <div className="SignUpForm Form">
             <h1>{valueSet(type).buttonText}</h1>
             <div className="input_wrapper">
                 <label>회원 구분</label>

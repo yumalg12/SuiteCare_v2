@@ -544,3 +544,33 @@ footer .social-links li:first-child { margin-left: 0; }
 .index-btn .btn i{
    margin-right: 15px;
 }
+
+/* ------------------------------------------------------------------ */
+/* SuiteCare Custom
+/* ------------------------------------------------------------------ */
+
+.Form {
+   width: 60%;
+   margin: 0 auto;
+   max-width: 600px;
+ }
+
+ .Form h1 {
+   text-align: center;
+ }
+ 
+ .Form .input_wrapper {
+   display: grid;
+   grid-template-columns: 200px 1fr;
+ }
+ 
+ .Form .input_wrapper .input_with_button{
+   display: grid;
+   grid-template-columns: 1fr 12rem;
+   gap: 1rem
+ }
+
+ .Form form .button_wrapper {
+   text-align: center;
+ }
+ 

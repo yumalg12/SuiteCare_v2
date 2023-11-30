@@ -1,22 +1,4 @@
 .SignUpForm {
-  width: 60%;
-  margin: 0 auto;
-  max-width: 600px;
-}
-
-.SignUpForm h1 {
-  text-align: center;
-}
-
-.SignUpForm .input_wrapper {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-}
-
-.SignUpForm .input_wrapper .input_with_button{
-  display: grid;
-  grid-template-columns: 1fr 12rem;
-  gap: 1rem
 }
 
 .SignUpForm .input_wrapper .input_phone {
@@ -28,6 +10,3 @@
   width: 30%;
 }
 
-.SignUpForm form .button_wrapper {
-  text-align: center;
-}
