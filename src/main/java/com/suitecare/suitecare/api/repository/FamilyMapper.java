@@ -9,4 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface FamilyMapper {
     int createFamily(CreateFamilyDTO createFamilyDTO);
     FamilyDTO login(LoginDTO loginDTO);
+    int checkDuplicateID(String id);
 }

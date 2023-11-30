@@ -16,4 +16,9 @@ public class FamilyService {
     public int createFamily(CreateFamilyDTO createFamilyDTO){
         return familyMapper.createFamily(createFamilyDTO);
     }
+
+    @Transactional
+    public int checkDuplicateID(String id){
+        return familyMapper.checkDuplicateID(id);
+    }
 }

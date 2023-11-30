@@ -19,4 +19,9 @@ public class FamilyController {
     public int createFamily(@RequestBody CreateFamilyDTO createFamilyDTO){
         return familyService.createFamily(createFamilyDTO);
     }
+
+    @PostMapping("/is_duplicate_id")
+    public int checkDuplicateID(@RequestBody String id){
+        return familyService.checkDuplicateID(id);
+    }
 }

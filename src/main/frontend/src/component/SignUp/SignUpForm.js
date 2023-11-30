@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import './SignUpForm.css';
+import axios from 'axios';
 
 const SignUpForm = ({ type }) => {
     //type에 따라 변경될 값을 모아 둔 함수
     const valueSet = ($type) => {
         if ($type === 'family') {
             return {
-                url: '/family/signup',
+                url: '/api/v1/family',
                 buttonText: '패밀리 회원가입',
                 radioRedirect: '/mate/signup',
                 otherType: '메이트 (간병인)',
             };
         } else if ($type === 'mate') {
             return {
-                url: '/mate/signup',
+                url: '/api/v1/mate',
                 buttonText: '메이트 회원가입',
                 radioRedirect: '/family/signup',
                 otherType: '패밀리 (간병 서비스 이용자)',
@@ -46,8 +47,29 @@ const SignUpForm = ({ type }) => {
     };
 
     //아이디 중복확인
-    const checkDuplicateID = () => {
+    const checkDuplicateID = async () => {
         alert(idState);
+    
+        try {
+            const response = await axios.post('/api/v1/is_duplicate_id', {
+                id: idState,
+            });
+    
+            const data = response.data;
+    
+            alert(data);
+    
+            if (data === 1) {
+                alert('이미 사용 중인 아이디입니다.');
+            } else {
+                alert('사용 가능한 아이디입니다.');
+                document.getElementById('id').readOnly = true;
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+
+        alert("중복확인 다 햇음");
     };
 
     //휴대폰 번호를 작성하고 hidden input에 모으는 파트
@@ -161,7 +183,7 @@ const SignUpForm = ({ type }) => {
 
             <hr />
 
-            <form name="signup">
+            <form name="signup" method='post'>
                 <div className="input_wrapper">
                     <label>아이디</label>
                     <div className="input_with_button">
