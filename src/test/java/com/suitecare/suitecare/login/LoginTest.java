@@ -34,5 +34,6 @@ public class LoginTest {
                 /*.andExpect(status().is3xxRedirection())*/
                 .andExpect(status().isOk())
                 /*.andExpect(redirectedUrl("/"));*/;
+
     }
 }
