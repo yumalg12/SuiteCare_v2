@@ -48,16 +48,14 @@ const SignUpForm = ({ type }) => {
 
     //아이디 중복확인
     const checkDuplicateID = async () => {
-        alert(idState);
+        alert("idState : " + idState);
     
         try {
-            const response = await axios.post('/api/v1/is_duplicate_id', {
-                id: idState,
-            });
+            const response = await axios.get("/api/v1/family", { params: { id: idState } });
     
             const data = response.data;
     
-            alert(data);
+            alert("data : " + data);
     
             if (data === 1) {
                 alert('이미 사용 중인 아이디입니다.');

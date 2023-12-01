@@ -2,15 +2,12 @@ package com.suitecare.suitecare.api.controller;
 
 import com.suitecare.suitecare.api.service.FamilyService;
 import com.suitecare.suitecare.domain.CreateFamilyDTO;
-import com.suitecare.suitecare.domain.FamilyDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping(path = "/api/v1")
+@CrossOrigin()
 public class FamilyController {
     @Autowired
     FamilyService familyService;
@@ -20,8 +17,8 @@ public class FamilyController {
         return familyService.createFamily(createFamilyDTO);
     }
 
-    @PostMapping("/is_duplicate_id")
-    public int checkDuplicateID(@RequestBody String id){
+    @GetMapping("/family")
+    public int checkDuplicateID(@RequestParam String id){
         return familyService.checkDuplicateID(id);
     }
 }

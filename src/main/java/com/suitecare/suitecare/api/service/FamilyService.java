@@ -2,7 +2,6 @@ package com.suitecare.suitecare.api.service;
 
 import com.suitecare.suitecare.api.repository.FamilyMapper;
 import com.suitecare.suitecare.domain.CreateFamilyDTO;
-import com.suitecare.suitecare.domain.FamilyDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +16,6 @@ public class FamilyService {
         return familyMapper.createFamily(createFamilyDTO);
     }
 
-    @Transactional
     public int checkDuplicateID(String id){
         return familyMapper.checkDuplicateID(id);
     }
