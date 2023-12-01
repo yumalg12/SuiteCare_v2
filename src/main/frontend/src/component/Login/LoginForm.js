@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './LoginForm.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const LoginForm = ({ type }) => {
     // react hook에서 state 사용
@@ -20,13 +21,19 @@ const LoginForm = ({ type }) => {
         event.preventDefault();
         console.log('ID', ID);
         console.log('Password', Password);
-        /*
-    let body = {
-        ID: ID,
-        password: Password,
-    }
-        dispatch(loginUser(body));
-*/
+
+        axios.post("/api/v1/login", {
+                                        suite_family_id : "Kim",
+                                        password : "Kim"
+                                    })
+                        .then((response) => {
+                            if(response.status === 200){
+                                console.log("로그인 결과: ");
+                                console.log("ID : " + response.data.suite_family_id);
+                                console.log("PW: " + response.data.password);
+                            }
+                        })
+                        .catch((error) => console.log(error));
     };
 
     const navigator = useNavigate();
